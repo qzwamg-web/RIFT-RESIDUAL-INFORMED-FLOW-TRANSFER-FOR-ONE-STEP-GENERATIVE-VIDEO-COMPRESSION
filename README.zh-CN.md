@@ -9,9 +9,11 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-EE4C2C?logo=pytorch&logoColor=white)](requirements-lock.txt)
 [![Endpoint](https://img.shields.io/badge/Release-C512-0F766E)](docs/FRAMEWORK.md)
 
-[方法](#方法概览) · [主观效果](#主观效果) · [实验结果](#实验结果) · [快速开始](#快速开始) · [文档](#文档)
+[方法](#方法概览) · [交互对比](#交互对比) · [实验结果](#实验结果) · [快速开始](#快速开始) · [文档](#文档)
 
 [English](README.md) | **简体中文**
+
+[**拖动对比：原图 / GLC / RIFT →**](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/)
 
 </div>
 
@@ -46,11 +48,49 @@ $$\hat z = z_q + a\,d,$$
 
 [框架细节](docs/FRAMEWORK.md) · [量化说明](docs/CODEC_QUANTIZATION.md)
 
-## 主观效果
+## 交互对比
+
+**[打开可拖动对比页 →](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/)**
+
+点击下方任意样例，即可拖动两条分割线查看**原图 / GLC / RIFT**。支持切换 **GLC / RIFT** 双图对比、查看全帧或相同位置的细节裁剪，以及打开无损 1080p 图片。鼠标、手机触摸和键盘均可操作。README 内为静态预览，实际拖动控件运行在链接的 GitHub Pages 页面中。
+
+<table>
+<tr>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#bosphorus"><img src="assets/comparison_bosphorus.png" width="560" alt="Bosphorus: Original, GLC, RIFT"></a><br>
+<strong>Bosphorus</strong> · UVG · Frame 66<br>
+<sub>Original / GLC / RIFT · 点击打开拖动对比</sub>
+</td>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#mcl12"><img src="assets/comparison_mcl12.png" width="560" alt="City skyline: Original, GLC, RIFT"></a><br>
+<strong>City skyline</strong> · MCL-JCV · Frame 41<br>
+<sub>Original / GLC / RIFT · 点击打开拖动对比</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#mcl03"><img src="assets/comparison_mcl03.png" width="560" alt="Gilded interior: Original, GLC, RIFT"></a><br>
+<strong>Gilded interior</strong> · MCL-JCV · Frame 89<br>
+<sub>Original / GLC / RIFT · 点击打开拖动对比</sub>
+</td>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#bqterrace"><img src="assets/comparison_bqterrace.png" width="560" alt="BQTerrace: Original, GLC, RIFT"></a><br>
+<strong>BQTerrace</strong> · HEVC-B · Frame 0<br>
+<sub>Original / GLC / RIFT · 点击打开拖动对比</sub>
+</td>
+</tr>
+</table>
+
+四组样例均复用 data 中的历史论文画面。各方法使用自身最低码率点；GLC 标注熵估计码率，RIFT 标注真实 rANS payload 码率。[来源、帧号与裁剪记录](docs/comparisons/PROVENANCE.json)。
+
+<details>
+<summary><strong>原始论文对比面板</strong></summary>
 
 ![UVG Bosphorus 与 HEVC-B BQTerrace 原始对比图](assets/qualitative.png)
 
 保留原图中的序列 bpp 和展示帧 LPIPS 标注。各方法使用自身最低码率点；星号码率为熵估计值。[素材来源与哈希](assets/PROVENANCE.json)。
+
+</details>
 
 ## 实验结果
 
@@ -163,6 +203,7 @@ python scripts/final.py speed --devices 0
 | 架构与恢复端 | [FRAMEWORK.md](docs/FRAMEWORK.md) |
 | 训练课程与学习率 | [TRAINING.md](docs/TRAINING.md) |
 | 视频及指标协议 | [TESTING.md](docs/TESTING.md) |
+| 可拖动对比页 | [在线查看](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/) · [页面源码](docs/comparisons/README.md) |
 | 图表与结果来源 | [benchmarks/README.md](docs/benchmarks/README.md) |
 | 发布快照与检查 | [PUBLICATION.md](docs/PUBLICATION.md) |
 | 第三方来源 | [VERSIONS.md](third_party/VERSIONS.md) |

@@ -1,0 +1,165 @@
+{
+  "default_scene": "bosphorus",
+  "scenes": [
+    {
+      "id": "bosphorus",
+      "title": "Bosphorus",
+      "detail": "Water & fine texture",
+      "dataset": "UVG",
+      "video": "Bosphorus_1920x1080_120fps_420_8bit_YUV",
+      "frame": 66,
+      "width": 1920,
+      "height": 1080,
+      "roi": [
+        960,
+        870,
+        384,
+        144
+      ],
+      "methods": {
+        "original": {
+          "label": "Original",
+          "src": "media/bosphorus/original.webp",
+          "bpp": null,
+          "qp": null,
+          "rate_kind": null
+        },
+        "glc": {
+          "label": "GLC",
+          "src": "media/bosphorus/glc.webp",
+          "bpp": 0.005247898816185839,
+          "qp": 0,
+          "rate_kind": "official_entropy_estimate_not_bitstream"
+        },
+        "rift": {
+          "label": "RIFT",
+          "src": "media/bosphorus/rift.webp",
+          "bpp": 0.005227162479575163,
+          "qp": 63,
+          "rate_kind": "actual_rANS_payload_bytes"
+        }
+      },
+      "thumbnail": "media/bosphorus/thumb.webp"
+    },
+    {
+      "id": "mcl12",
+      "title": "City skyline",
+      "detail": "Foliage & building edges",
+      "dataset": "MCL-JCV",
+      "video": "videoSRC12_1920x1080_30",
+      "frame": 41,
+      "width": 1920,
+      "height": 1080,
+      "roi": [
+        1440,
+        774,
+        384,
+        144
+      ],
+      "methods": {
+        "original": {
+          "label": "Original",
+          "src": "media/mcl12/original.webp",
+          "bpp": null,
+          "qp": null,
+          "rate_kind": null
+        },
+        "glc": {
+          "label": "GLC",
+          "src": "media/mcl12/glc.webp",
+          "bpp": 0.005298709315460882,
+          "qp": 0,
+          "rate_kind": "official_entropy_estimate_not_bitstream"
+        },
+        "rift": {
+          "label": "RIFT",
+          "src": "media/mcl12/rift.webp",
+          "bpp": 0.006354517718545752,
+          "qp": 63,
+          "rate_kind": "actual_rANS_payload_bytes"
+        }
+      },
+      "thumbnail": "media/mcl12/thumb.webp"
+    },
+    {
+      "id": "mcl03",
+      "title": "Gilded interior",
+      "detail": "Fine wall texture",
+      "dataset": "MCL-JCV",
+      "video": "videoSRC03_1920x1080_30fps",
+      "frame": 89,
+      "width": 1920,
+      "height": 1080,
+      "roi": [
+        384,
+        54,
+        384,
+        144
+      ],
+      "methods": {
+        "original": {
+          "label": "Original",
+          "src": "media/mcl03/original.webp",
+          "bpp": null,
+          "qp": null,
+          "rate_kind": null
+        },
+        "glc": {
+          "label": "GLC",
+          "src": "media/mcl03/glc.webp",
+          "bpp": 0.004812382954154528,
+          "qp": 0,
+          "rate_kind": "official_entropy_estimate_not_bitstream"
+        },
+        "rift": {
+          "label": "RIFT",
+          "src": "media/mcl03/rift.webp",
+          "bpp": 0.005649102902879902,
+          "qp": 63,
+          "rate_kind": "actual_rANS_payload_bytes"
+        }
+      },
+      "thumbnail": "media/mcl03/thumb.webp"
+    },
+    {
+      "id": "bqterrace",
+      "title": "BQTerrace",
+      "detail": "Railings & architectural detail",
+      "dataset": "HEVC-B",
+      "video": "BQTerrace_1920x1080_60fps",
+      "frame": 0,
+      "width": 1920,
+      "height": 1080,
+      "roi": [
+        960,
+        102,
+        384,
+        144
+      ],
+      "methods": {
+        "original": {
+          "label": "Original",
+          "src": "media/bqterrace/original.webp",
+          "bpp": null,
+          "qp": null,
+          "rate_kind": null
+        },
+        "glc": {
+          "label": "GLC",
+          "src": "media/bqterrace/glc.webp",
+          "bpp": 0.007213825450029248,
+          "qp": 0,
+          "rate_kind": "official_entropy_estimate_not_bitstream"
+        },
+        "rift": {
+          "label": "RIFT",
+          "src": "media/bqterrace/rift.webp",
+          "bpp": 0.005581325954861111,
+          "qp": 63,
+          "rate_kind": "actual_rANS_payload_bytes"
+        }
+      },
+      "thumbnail": "media/bqterrace/thumb.webp"
+    }
+  ]
+}

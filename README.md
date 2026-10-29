@@ -10,9 +10,11 @@
 [![Endpoint](https://img.shields.io/badge/Release-C512-0F766E)](docs/FRAMEWORK.md)
 [![Benchmarks](https://img.shields.io/badge/Benchmarks-42%20videos-8B5CF6)](docs/benchmarks/DATASET_METRICS.csv)
 
-[Overview](#overview) · [Visual results](#visual-results) · [Benchmarks](#benchmarks) · [Quick start](#quick-start) · [Documentation](#documentation)
+[Overview](#overview) · [Interactive comparisons](#interactive-comparisons) · [Benchmarks](#benchmarks) · [Quick start](#quick-start) · [Documentation](#documentation)
 
 **English** | [简体中文](README.zh-CN.md)
+
+[**Drag to compare Original / GLC / RIFT →**](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/)
 
 </div>
 
@@ -47,11 +49,49 @@ where $z_q$ is the decoded codec latent, $d$ is the adapted channel direction, a
 
 [Framework details](docs/FRAMEWORK.md) · [Quantization](docs/CODEC_QUANTIZATION.md)
 
-## Visual results
+## Interactive comparisons
+
+**[Open the interactive viewer →](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/)**
+
+Click a scene below, then drag the two dividers to compare **Original / GLC / RIFT**. Switch to **GLC / RIFT**, view the full frame or shared detail crop, and open lossless 1080p images. Mouse, touch and keyboard controls are supported. The README previews are static; the sliders run on the linked GitHub Pages site.
+
+<table>
+<tr>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#bosphorus"><img src="assets/comparison_bosphorus.png" width="560" alt="Bosphorus: Original, GLC, RIFT"></a><br>
+<strong>Bosphorus</strong> · UVG · Frame 66<br>
+<sub>Original / GLC / RIFT · Click to drag</sub>
+</td>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#mcl12"><img src="assets/comparison_mcl12.png" width="560" alt="City skyline: Original, GLC, RIFT"></a><br>
+<strong>City skyline</strong> · MCL-JCV · Frame 41<br>
+<sub>Original / GLC / RIFT · Click to drag</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#mcl03"><img src="assets/comparison_mcl03.png" width="560" alt="Gilded interior: Original, GLC, RIFT"></a><br>
+<strong>Gilded interior</strong> · MCL-JCV · Frame 89<br>
+<sub>Original / GLC / RIFT · Click to drag</sub>
+</td>
+<td width="50%" align="center">
+<a href="https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/#bqterrace"><img src="assets/comparison_bqterrace.png" width="560" alt="BQTerrace: Original, GLC, RIFT"></a><br>
+<strong>BQTerrace</strong> · HEVC-B · Frame 0<br>
+<sub>Original / GLC / RIFT · Click to drag</sub>
+</td>
+</tr>
+</table>
+
+The gallery reuses the original archived paper images. Each method uses its own lowest-rate point; GLC rates are entropy estimates and RIFT rates are actual rANS payload rates. [Source, frame and crop metadata](docs/comparisons/PROVENANCE.json).
+
+<details>
+<summary><strong>Original paper comparison panel</strong></summary>
 
 ![Qualitative comparison on UVG Bosphorus and HEVC-B BQTerrace](assets/qualitative.png)
 
 The original sequence-bpp and displayed-frame LPIPS labels are retained. Each method uses its own lowest-rate point; starred rates are entropy estimates. The panel illustrates visual behavior rather than equal-rate performance.
+
+</details>
 
 ## Benchmarks
 
@@ -167,7 +207,7 @@ raqvc/
   metrics/        Spatial, temporal and distributional perceptual metrics
 scripts/final.py  preflight · smoke · train · resume · evaluate · speed
 configs/          Codec configuration and 42-video evaluation manifest
-docs/             Reproduction contracts, assets and benchmark provenance
+docs/             Reproduction contracts, assets, benchmarks and interactive viewer
 assets/           Original paper figures, visual comparisons and R–D figure
 third_party/      Vendored DCVC/Wan sources with upstream notices
 ```
@@ -181,6 +221,7 @@ third_party/      Vendored DCVC/Wan sources with upstream notices
 | Architecture | [docs/FRAMEWORK.md](docs/FRAMEWORK.md) |
 | Training and learning rates | [docs/TRAINING.md](docs/TRAINING.md) |
 | Video and metric protocol | [docs/TESTING.md](docs/TESTING.md) |
+| Interactive viewer | [Live comparison gallery](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/) · [Source](docs/comparisons/README.md) |
 | Benchmark provenance | [docs/benchmarks/README.md](docs/benchmarks/README.md) |
 | Quantization | [docs/CODEC_QUANTIZATION.md](docs/CODEC_QUANTIZATION.md) |
 | Publication snapshot | [docs/PUBLICATION.md](docs/PUBLICATION.md) |

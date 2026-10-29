@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "checked_utc": "2026-10-29T08:00:00.043817+00:00",
+  "scope": "Interactive display of archived frames; no new model evaluation.",
+  "assets": {
+    "scenes": 4,
+    "full_resolution_lossless_RGB_pairs": 12,
+    "provenance_entries": 20,
+    "source_frame_crop_and_rate_contracts_match": true,
+    "unchanged_runtime_files": 163,
+    "public_local_links": 74,
+    "broken_links": [],
+    "raw_video_decodes": 0,
+    "model_or_GPU_runs": 0
+  },
+  "browser": {
+    "schema": 1,
+    "checked_utc": "2026-10-29T07:56:48.702659+00:00",
+    "browser": "Cached Chromium headless shell, Playwright 1.64.1",
+    "desktop_viewport": [
+      1440,
+      1100
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "checks": [
+      "Initial 1080p lossless images and all four scene cards load",
+      "Both on-image dividers follow real mouse drags (20% and 80%)",
+      "Divider keyboard arrows, Shift steps and native range input work",
+      "Pairwise GLC/RIFT can reveal either image completely (0% and 100%)",
+      "32 scene/mode/region combinations load with aligned image rectangles",
+      "README scene deep links open the requested frame",
+      "Real mobile touch drags work on both handles at 390px width; no horizontal overflow",
+      "Mobile pair selection and full-frame switch work",
+      "Fullscreen enters/exits and preserves 16:9 full-frame and 8:3 detail aspect ratios within viewport height"
+    ],
+    "javascript_errors": [],
+    "failed_requests": [],
+    "scene_mode_region_combinations": 32,
+    "gpu_or_video_decode_run": false
+  },
+  "implementation_sha256": {
+    "index.html": "6e57602c321f5b85a333163e39cd49cbe0caf564f43d66dda0073dcd54a99546",
+    "style.css": "f5b3cce5cf37def8cb1a706e41065cfc92d0f929f88b589c6a0a68e2967b91a6",
+    "app.js": "de961ee2126305ef3a2a8f46c394b66cb2d915d10c97f2b8a22eedf011f9af9d",
+    "data.json": "163bc6aabcdc1f1eb8deb47bd0e7d6230e930c44f8ead9498edea9a95e797d59",
+    "PROVENANCE.json": "bfb561e33d146f989e4d86de69588881fa88fceb6c646186512b8c7c785b7339"
+  }
+}

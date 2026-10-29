@@ -21,3 +21,14 @@ previous host-oriented README; public setup starts at the root README.
 DCVC/Wan retain original licenses/notices. RIFT metadata declares `Proprietary`;
 no MIT/Apache grant is invented. No author list, DOI, paper URL or acceptance
 badge is fabricated from missing metadata.
+
+
+## Interactive gallery
+
+The gallery in `comparisons/` reuses four archived Original/GLC/RIFT frame sets.
+Full-resolution images are lossless WebP exports with exact decoded RGB equality;
+README contact sheets and small thumbnails are separate previews. The sample
+operating points and historical protocol are retained. There is no new video
+decode, model run or quality evaluation. See `comparisons/PROVENANCE.json` and
+`comparisons/CHECKS.json` for this addition. `PUBLICATION_CHECKS.json` records the
+initial 190-file source publication.

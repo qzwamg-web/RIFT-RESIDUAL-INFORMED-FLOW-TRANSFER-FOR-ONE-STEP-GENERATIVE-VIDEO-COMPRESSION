@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Drag to compare original, GLC and RIFT video frames in lossless 1080p, with shared detail crops.">
+  <meta name="theme-color" content="#f6f8fb">
+  <title>RIFT · Interactive comparisons</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#bosphorus" aria-label="RIFT comparisons">RIFT<span> / visual comparisons</span></a>
+    <a class="repo-link" href="https://github.com/qzwamg-web/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION">View on GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">ONE-STEP GENERATIVE VIDEO COMPRESSION</p>
+      <h1 id="page-title">Original. <span class="glc-color">GLC.</span> <span class="rift-color">RIFT.</span></h1>
+      <p class="intro-copy">Drag the dividers. Look closer.<br><span>Four scenes. Lossless 1080p. Shared detail crops.</span></p>
+    </section>
+    <nav id="scene-picker" class="scene-picker" aria-label="Choose a scene"></nav>
+    <article class="comparison-shell" id="comparison-shell">
+      <div class="viewer-toolbar">
+        <div><p id="scene-meta" class="eyebrow">1080p / archived paper samples</p><h2 id="scene-title">Loading comparison…</h2></div>
+        <div class="toolbar-controls">
+          <div class="view-switch" aria-label="Image region">
+            <button id="detail-view" type="button" aria-pressed="false">Detail crop</button>
+            <button id="full-view" type="button" aria-pressed="true">Full frame</button>
+          </div>
+          <button id="fullscreen" type="button" class="quiet-button" aria-label="Enter fullscreen" title="Fullscreen"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+        </div>
+      </div>
+      <div class="mode-row">
+        <label for="mode">Compare</label>
+        <select id="mode">
+          <option value="three">Original / GLC / RIFT</option>
+          <option value="glc-rift">GLC / RIFT</option>
+          <option value="original-rift">Original / RIFT</option>
+          <option value="original-glc">Original / GLC</option>
+        </select>
+        <button id="reset" class="text-button" type="button">Reset dividers</button>
+      </div>
+      <div class="method-legend" id="method-legend"></div>
+      <p class="operating-note">Each method’s lowest-rate point · *GLC: entropy-estimated bpp</p>
+      <div id="viewer" class="viewer is-loading" aria-busy="true">
+        <div id="stage" class="stage" aria-label="Image comparison. Drag a divider or use the sliders below.">
+          <div id="layer-original" class="layer"><img id="image-original" alt="" draggable="false"></div>
+          <div id="layer-glc" class="layer"><img id="image-glc" alt="" draggable="false"></div>
+          <div id="layer-rift" class="layer"><img id="image-rift" alt="" draggable="false"></div>
+          <span id="label-original" class="image-label original-label">Original</span>
+          <span id="label-glc" class="image-label glc-label">GLC</span>
+          <span id="label-rift" class="image-label rift-label">RIFT</span>
+          <button id="divider-0" type="button" class="divider" role="slider" aria-label="Original / GLC divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33.3" aria-orientation="horizontal"><span class="divider-line"></span><span class="divider-knob" aria-hidden="true">‹ ›</span></button>
+          <button id="divider-1" type="button" class="divider" role="slider" aria-label="GLC / RIFT divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66.7" aria-orientation="horizontal"><span class="divider-line"></span><span class="divider-knob" aria-hidden="true">‹ ›</span></button>
+        </div>
+        <div id="loading" class="loading" role="status">Loading lossless images…</div>
+      </div>
+      <p id="load-error" class="load-error" role="alert" hidden></p>
+      <div class="range-controls">
+        <div id="range-group-0" class="range-group"><label for="range-0"><span id="range-name-0">Original / GLC</span><output id="value-0" for="range-0">33%</output></label><input id="range-0" type="range" min="0" max="100" step="0.1" value="33.3" aria-label="Original / GLC divider"></div>
+        <div id="range-group-1" class="range-group"><label for="range-1"><span id="range-name-1">GLC / RIFT</span><output id="value-1" for="range-1">67%</output></label><input id="range-1" type="range" min="0" max="100" step="0.1" value="66.7" aria-label="GLC / RIFT divider"></div>
+      </div>
+      <div class="viewer-bottom"><span>Drag on the image or use the sliders. <span class="keyboard-hint">Arrow keys work too.</span></span><span id="region-meta">1920 × 1080 full frame</span></div>
+    </article>
+    <section class="context-section" aria-labelledby="context-title">
+      <div class="context-image" id="context-image"><img id="context-original" alt="Original frame showing the selected detail region"><span id="roi-box" aria-hidden="true"></span></div>
+      <div class="context-copy">
+        <p class="eyebrow">THE SAME FRAME, THE SAME REGION</p>
+        <h2 id="context-title">See the detail in context.</h2>
+        <p id="scene-description"></p>
+        <p class="download-label">Open a lossless 1920 × 1080 image</p>
+        <div class="download-links"><a id="download-original" target="_blank" rel="noopener">Original ↗</a><a id="download-glc" target="_blank" rel="noopener">GLC ↗</a><a id="download-rift" target="_blank" rel="noopener">RIFT ↗</a></div>
+      </div>
+    </section>
+    <details class="provenance">
+      <summary>Sample provenance &amp; operating points</summary>
+      <p>These are the four preserved C512 paper examples, using each method’s own lowest-rate operating point. They are not matched-bitrate comparisons. RIFT is C512 QP63; GLC is QP0. A star marks GLC’s official entropy-estimated bpp; RIFT uses actual rANS payload bpp.</p>
+      <p>Existing archived PNGs were reused without decoding source videos. The served WebP files have exactly the same decoded RGB pixels. Full-frame and detail views share the same images and crop coordinates across all methods. Frame indices follow the original zero-based manifest. This gallery preserves the historical visual-sample protocol; it is not a new evaluation or a dcvc_float reproduction.</p>
+      <p><a href="PROVENANCE.json">Source and pixel hashes</a> · <a href="data.json">Frame, crop and rate metadata</a></p>
+    </details>
+    <noscript><p class="load-error">Enable JavaScript to use the sliders. The lossless images and metadata are available in <a href="data.json">data.json</a>.</p></noscript>
+  </main>
+  <footer>RIFT · Residual-Informed Flow Transfer for One-Step Generative Video Compression</footer>
+</body>
+</html>

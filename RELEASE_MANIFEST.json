@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "name": "RIFT C512 GitHub source and original paper assets",
-  "created_utc": "2026-10-29T07:20:17.018235+00:00",
+  "name": "RIFT C512 source, original paper assets and interactive comparisons",
+  "created_utc": "2026-10-29T08:00:01.744550+00:00",
   "repository": "https://github.com/qzwamg-web/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION",
   "source_release_commit": "c5e878731c9b2e6cd96607a9ac00231ed4e75a93",
   "source_release_manifest": "docs/SOURCE_RELEASE_MANIFEST.json",
@@ -14,7 +14,8 @@
     "Existing teaser, qualitative and RD figures copied from data without redrawing",
     "Original editable architecture PowerPoint with PDF/PNG exports",
     "Preserved metrics and figure provenance",
-    "Documentation image allowlist in .gitignore"
+    "Documentation image allowlist in .gitignore",
+    "Four archived Original/GLC/RIFT scene comparisons, lossless RGB-exact full images, draggable viewer and bilingual README cards"
   ],
   "validation": "docs/PUBLICATION_CHECKS.json",
   "inventory_excludes": [
@@ -35,18 +36,38 @@
     },
     {
       "path": "README.md",
-      "bytes": 10122,
-      "sha256": "bae31e16c25eebabb4d85e5f9e19d3d519c8715f94ea3fd3a03dd581829d7409"
+      "bytes": 12933,
+      "sha256": "78a4c84d2783a76c4bad774faeeabd3e410b9880f9cb513c70d0cb01c8b2c8fe"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 8299,
-      "sha256": "c9dff525ca86a539c9d6fc3b4baca3128e108becf6e2d3350660c2b953e9348d"
+      "bytes": 11110,
+      "sha256": "a578045c8d48949aeb413e3af90a3ba57cedbb1f029edffec24e6e7fb01fb5a8"
     },
     {
       "path": "assets/PROVENANCE.json",
       "bytes": 4407,
       "sha256": "7d46ea1c902c0dd097e966cc96c1b8f6f6c2221693009f8fd327601d3be7d3b7"
+    },
+    {
+      "path": "assets/comparison_bosphorus.png",
+      "bytes": 550417,
+      "sha256": "4670735fd58df997b68181545bfce72b5ca53017b64169a9819d7b9624592a6e"
+    },
+    {
+      "path": "assets/comparison_bqterrace.png",
+      "bytes": 768764,
+      "sha256": "ffcc32386266f7aa45ec97eef6d8a3710202b4313d99cdac98190f585a7a26f0"
+    },
+    {
+      "path": "assets/comparison_mcl03.png",
+      "bytes": 617770,
+      "sha256": "548bee2a82b9c6ced16d95d6f7fbe0a17fe3729ea04f0703505847a72c30a1d1"
+    },
+    {
+      "path": "assets/comparison_mcl12.png",
+      "bytes": 673649,
+      "sha256": "9d5324590518633828fa5528af5056f384bb74b8fd25fd526ef8ac178d768c8b"
     },
     {
       "path": "assets/framework.pdf",
@@ -89,6 +110,11 @@
       "sha256": "d5ff7c703a94ad46f6ef9febefeb0de65e9a3cdac632548b2b08a5d372496185"
     },
     {
+      "path": "docs/.nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "docs/ASSETS.md",
       "bytes": 1419,
       "sha256": "b3a658b23d62ed88839b70bb8ce0b5142110ebb0d561f63a05c0bc3683618f76"
@@ -120,8 +146,8 @@
     },
     {
       "path": "docs/PUBLICATION.md",
-      "bytes": 1340,
-      "sha256": "3559812453401999bed2812b7523af295e0b246127bd2182158b0ff41befe15c"
+      "bytes": 1882,
+      "sha256": "3caf1bc3ad34dbd068be9fb199523ea3bbd7610ec5f5230294441733cd63f83d"
     },
     {
       "path": "docs/PUBLICATION_CHECKS.json",
@@ -167,6 +193,126 @@
       "path": "docs/benchmarks/README.md",
       "bytes": 1722,
       "sha256": "86185a36cc382409a66839ce3676ec0337ff199e2c985d57fa68982b71650192"
+    },
+    {
+      "path": "docs/comparisons/CHECKS.json",
+      "bytes": 2042,
+      "sha256": "03c0ce9cb211efb4fee3dfdaa0a7233028f1358ad73e6c6c634864da3ffd03cd"
+    },
+    {
+      "path": "docs/comparisons/PROVENANCE.json",
+      "bytes": 12817,
+      "sha256": "bfb561e33d146f989e4d86de69588881fa88fceb6c646186512b8c7c785b7339"
+    },
+    {
+      "path": "docs/comparisons/README.md",
+      "bytes": 2090,
+      "sha256": "e26787120b5f52d49d1224d4684885e6a6a50f322d73f749d23f2e6e6c13a57d"
+    },
+    {
+      "path": "docs/comparisons/app.js",
+      "bytes": 10640,
+      "sha256": "de961ee2126305ef3a2a8f46c394b66cb2d915d10c97f2b8a22eedf011f9af9d"
+    },
+    {
+      "path": "docs/comparisons/data.json",
+      "bytes": 4085,
+      "sha256": "163bc6aabcdc1f1eb8deb47bd0e7d6230e930c44f8ead9498edea9a95e797d59"
+    },
+    {
+      "path": "docs/comparisons/index.html",
+      "bytes": 7178,
+      "sha256": "6e57602c321f5b85a333163e39cd49cbe0caf564f43d66dda0073dcd54a99546"
+    },
+    {
+      "path": "docs/comparisons/media/bosphorus/glc.webp",
+      "bytes": 1998966,
+      "sha256": "f03f7200983c00bf182ef62e2f8f041d762d5e78190cbfb6214e79477c6a8e65"
+    },
+    {
+      "path": "docs/comparisons/media/bosphorus/original.webp",
+      "bytes": 1348396,
+      "sha256": "19d77991f0322e886d9949ce6dafd558cd1bde6b927baa9ce80b641900dff4b3"
+    },
+    {
+      "path": "docs/comparisons/media/bosphorus/rift.webp",
+      "bytes": 1804960,
+      "sha256": "6f008d399b36fb2bcb50c63c627f4b7c3339c7898ab56bf36a6dffa0f0bdb4cd"
+    },
+    {
+      "path": "docs/comparisons/media/bosphorus/thumb.webp",
+      "bytes": 64478,
+      "sha256": "2ea12c54612b9ca7dbd26d1158423f2d972ad58e911aa38d1602a623873aac19"
+    },
+    {
+      "path": "docs/comparisons/media/bqterrace/glc.webp",
+      "bytes": 2831092,
+      "sha256": "6057ad51cac9e93db5ca3a5c82be3e1590c429aac030cecfba7e80ec9fbb9b0f"
+    },
+    {
+      "path": "docs/comparisons/media/bqterrace/original.webp",
+      "bytes": 1929600,
+      "sha256": "968f77d3c0eb8ac3305d2bacd95906eb8d371532fd2d3bde66b22871ea923c5e"
+    },
+    {
+      "path": "docs/comparisons/media/bqterrace/rift.webp",
+      "bytes": 2391742,
+      "sha256": "0a70c3430000b51d51740c682b60aa8c3d78583b40fb131ca0e46c4f569a5254"
+    },
+    {
+      "path": "docs/comparisons/media/bqterrace/thumb.webp",
+      "bytes": 79904,
+      "sha256": "a742c392cd5f22bab627a1ca77837268480ebb0bf3d4875ecd352168e7cb465e"
+    },
+    {
+      "path": "docs/comparisons/media/mcl03/glc.webp",
+      "bytes": 1950884,
+      "sha256": "bfcd975dcf1ea3e94d092df64ab5f0524c239f557e5a0b585059402fd78d46c6"
+    },
+    {
+      "path": "docs/comparisons/media/mcl03/original.webp",
+      "bytes": 1411472,
+      "sha256": "3f1bc075c4492b7c0a1df74c5008621980781f15a4f1876df7a8250bc1795acf"
+    },
+    {
+      "path": "docs/comparisons/media/mcl03/rift.webp",
+      "bytes": 1879234,
+      "sha256": "2eec7be076dcb18bfd2b6669f1d8098ced50683de6bb116936c9c801d0bd5ba4"
+    },
+    {
+      "path": "docs/comparisons/media/mcl03/thumb.webp",
+      "bytes": 65902,
+      "sha256": "a1f643dc58968e4eeeb60396a568f2b8b84018c75e4d0f83da31f4b24c33a357"
+    },
+    {
+      "path": "docs/comparisons/media/mcl12/glc.webp",
+      "bytes": 2113696,
+      "sha256": "28fe224bf30fb17e60c3a726d0bdbfafebb1a0e03ebf9f9413dbc05186f64349"
+    },
+    {
+      "path": "docs/comparisons/media/mcl12/original.webp",
+      "bytes": 1340444,
+      "sha256": "29a4ebf0124478edb521e5cd60ad9eeed7715678d3cf16be5452a9562eecdea8"
+    },
+    {
+      "path": "docs/comparisons/media/mcl12/rift.webp",
+      "bytes": 1907386,
+      "sha256": "61984e58a9ecc4d3e40559e1c5a9f5a41c0ef65116f28ada5c569b55d12b1e36"
+    },
+    {
+      "path": "docs/comparisons/media/mcl12/thumb.webp",
+      "bytes": 72850,
+      "sha256": "d65765aabbb959c7616a3400c5fa7fdcdc36fadfe36065727f6357b9826524fb"
+    },
+    {
+      "path": "docs/comparisons/style.css",
+      "bytes": 10805,
+      "sha256": "f5b3cce5cf37def8cb1a706e41065cfc92d0f929f88b589c6a0a68e2967b91a6"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 388,
+      "sha256": "c54c81620d941b9586eb98de6c1c1bd23153fb5034222b6242f744d8154fb95b"
     },
     {
       "path": "pyproject.toml",
@@ -968,5 +1114,8 @@
       "bytes": 7274,
       "sha256": "905850d9814ac99222b4dbb28016abcd6306e5ca161493b498b1c4afb5a99e89"
     }
-  ]
+  ],
+  "previous_publication_commit": "366136a11371d64bc46d279f9069a5cca0a23980",
+  "interactive_gallery": "docs/comparisons/index.html",
+  "interactive_validation": "docs/comparisons/CHECKS.json"
 }
