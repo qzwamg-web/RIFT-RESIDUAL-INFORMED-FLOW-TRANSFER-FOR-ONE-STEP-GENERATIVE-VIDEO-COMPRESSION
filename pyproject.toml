@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raqvc"
+version = "0.1.0"
+description = "Rate-Adaptive Quantization Video Coding — reference implementation"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+authors = [{name = "jyfu0809", email = "jyfu0809@gmail.com"}]
+license = {text = "Proprietary"}
+dependencies = [
+    "torch>=2.1",
+    "numpy>=1.24",
+    "imageio[ffmpeg]>=2.31",
+    "Pillow>=10.0",
+    "PyYAML>=6.0",
+    "webdataset>=0.2",
+    "omegaconf>=2.3",
+    "accelerate>=0.30",
+]
+
+[project.optional-dependencies]
+deepspeed = [
+    "deepspeed>=0.14",
+]
+metrics = [
+    "lpips>=0.1.4",
+    "pytorch-fid>=0.3.0",
+    "pytorch-msssim>=1.0.0",
+    "DISTS-pytorch",
+    "matplotlib>=3.7",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.3",
+    "black>=24.0",
+    "matplotlib>=3.7",
+]
+
+[tool.setuptools.packages.find]
+include = ["raqvc*"]
+exclude = ["third_party*", "tests*", "brige*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"
+markers = [
+    "integration: tests that load real third-party checkpoints (slow)",
+    "gpu: tests that require CUDA",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["third_party", "brige", "Wan2.2-main", "avs-eem"]
+
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+extend-exclude = "(third_party|brige|Wan2\\.2-main|avs-eem)"

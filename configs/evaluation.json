@@ -1,0 +1,214 @@
+{
+  "jobs": [
+    {
+      "dataset": "HEVC_B",
+      "video": "/qzwang/data/HEVC_B/BQTerrace_1920x1080_60fps.yuv",
+      "fps": 60
+    },
+    {
+      "dataset": "HEVC_B",
+      "video": "/qzwang/data/HEVC_B/BasketballDrive_1920x1080_60fps.yuv",
+      "fps": 60
+    },
+    {
+      "dataset": "HEVC_B",
+      "video": "/qzwang/data/HEVC_B/Cactus_1920x1080_60fps.yuv",
+      "fps": 60
+    },
+    {
+      "dataset": "HEVC_B",
+      "video": "/qzwang/data/HEVC_B/Kimono_1920x1080_24fps.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "HEVC_B",
+      "video": "/qzwang/data/HEVC_B/ParkScene_1920x1080_24fps.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC01_1920x1080_30fps.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC02_1920x1080_30fps.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC03_1920x1080_30fps.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC04_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC05_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC06_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC07_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC08_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC09_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC10_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC11_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC12_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC13_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC14_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC15_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC16_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC17_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC18_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC19_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC20_1920x1080_25.yuv",
+      "fps": 25
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC21_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC22_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC23_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC24_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC25_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC26_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC27_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC28_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC29_1920x1080_24.yuv",
+      "fps": 24
+    },
+    {
+      "dataset": "MCL-JCV",
+      "video": "/qzwang/data/MCL-JCV/videoSRC30_1920x1080_30.yuv",
+      "fps": 30
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/Beauty_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/Bosphorus_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/HoneyBee_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/Jockey_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/ReadySteadyGo_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/ShakeNDry_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    },
+    {
+      "dataset": "UVG",
+      "video": "/qzwang/data/UVG/YachtRide_1920x1080_120fps_420_8bit_YUV.yuv",
+      "fps": 120
+    }
+  ]
+}

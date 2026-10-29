@@ -1,0 +1,52 @@
+[
+  {
+    "path": "model/C512_original_bundle.pt",
+    "bytes": 589619509,
+    "sha256": "78a84e4947ba3e8dfccb2bcf13556c3898b9d7695b73a93d0196272dcfd1a59b"
+  },
+  {
+    "path": "model/stage3_dit_reproduction.pt",
+    "bytes": 10166524717,
+    "sha256": "40286fc625a9bbe8b46649f1e82b5b339a0f959b30148102ca3b9d66a3a94d66"
+  },
+  {
+    "path": "model/headless_step_002048.pt",
+    "bytes": 581001899,
+    "sha256": "f0b129d7f22f78d29c4d21effe7d60f97023230a082708d3e524ecdf809dbd9d"
+  },
+  {
+    "path": "model/C512_resume_latest.pt",
+    "bytes": 1174137693,
+    "sha256": "a863a861fca3527df89a9a88e7f917fc641a52c4be67803b7081c73b9ba7222b"
+  },
+  {
+    "path": "model/C512_merged_complete.pt",
+    "bytes": 20696419549,
+    "sha256": "f5bb2b2f8a60791bfea9a54a997d3388fc18ca099f91fe1b010563cc0f3a468f"
+  },
+  {
+    "path": "model/headless_resume_latest.pt",
+    "bytes": 1160555845,
+    "sha256": "e8f8e1f2d06336d1241f2b935082b156b0b18194813ef73e9ba01fc1b90d6e23"
+  },
+  {
+    "path": "model/wan/vae.pth",
+    "bytes": 2818806223,
+    "sha256": "cbb1eb5dfc69f9453edb862bb6706f08436873e79334e5653e2d2734cd2edcbc"
+  },
+  {
+    "path": "model/wan/low_noise_model/diffusion_pytorch_model.bin",
+    "bytes": 20037787281,
+    "sha256": "410d47dc0acb8cbbce015db0c4dabb72aad932c06d586844c7faef2019d2c2b1"
+  },
+  {
+    "path": "model/codec_initializers/cvpr2025_image.pth.tar",
+    "bytes": 182764252,
+    "sha256": "555eff5f4026774f477bebdcbb3b52548e0da230803959dcebcea4d732a90dd9"
+  },
+  {
+    "path": "model/codec_initializers/cvpr2025_video.pth.tar",
+    "bytes": 82899063,
+    "sha256": "b12e7faf4ddb6126d8e138a627ed6a349b8e1052d3ed9e343e1ba266466675d6"
+  }
+]

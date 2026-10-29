@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "description": "Existing RIFT paper assets from the C512 data archive; no newly drawn or generated diagrams.",
+  "created_utc": "2026-10-29T07:18:00.305826+00:00",
+  "qualitative_rate_convention": "Each method uses its own lowest-rate point; starred rates are entropy estimates.",
+  "rd_baseline_convention": "1080p dashed baselines are digitized published references with their original protocols.",
+  "files": [
+    {
+      "path": "assets/teaser.png",
+      "bytes": 1780503,
+      "sha256": "7df370eb8516bde27ec26e3610c48b6e29e242f3057435f9456b0101c4802e7a",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/subjective1080/ppt/preview/C512_Teaser_v1.png",
+      "source_sha256": "7df370eb8516bde27ec26e3610c48b6e29e242f3057435f9456b0101c4802e7a",
+      "preparation": "unchanged copy"
+    },
+    {
+      "path": "assets/qualitative.png",
+      "bytes": 975714,
+      "sha256": "4e5e9e9166e342b55e70e8aa7b44d699a8689c54e137cdf29fb6e7792b71086c",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/subjective1080/ppt/preview/C512_Subjective_Comparison_v1.png",
+      "source_sha256": "4e5e9e9166e342b55e70e8aa7b44d699a8689c54e137cdf29fb6e7792b71086c",
+      "preparation": "unchanged copy"
+    },
+    {
+      "path": "assets/perceptual_rd_1080.png",
+      "bytes": 414787,
+      "sha256": "f1f1b88a5236e043fef8bc5bbd2b81ff247d906cb78eb1201faaed17bcb6340b",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/rd_revision_v6/RIFT_1080P_perceptual_3datasets.png",
+      "source_sha256": "f1f1b88a5236e043fef8bc5bbd2b81ff247d906cb78eb1201faaed17bcb6340b",
+      "preparation": "unchanged copy"
+    },
+    {
+      "path": "assets/framework.pptx",
+      "bytes": 236330,
+      "sha256": "40318293fcd87e632edfce2853a1c7d09781c051ceb32a71bd43848983c35ef4",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/preservation/presentations/artifacts/editable_architecture_output_v2/editable_architecture_output_completed_v2.pptx",
+      "source_sha256": "40318293fcd87e632edfce2853a1c7d09781c051ceb32a71bd43848983c35ef4",
+      "preparation": "unchanged original editable PowerPoint"
+    },
+    {
+      "path": "assets/framework.pdf",
+      "bytes": 175638,
+      "sha256": "bd946ae6a51eaac8d56801be5e0ab67819f1764082cee0c8d815e2562cfbcd39",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/preservation/presentations/artifacts/editable_architecture_output_v2/editable_architecture_output_completed_v2.pptx",
+      "source_sha256": "40318293fcd87e632edfce2853a1c7d09781c051ceb32a71bd43848983c35ef4",
+      "preparation": "LibreOffice headless PDF export of the original PowerPoint; original slide layout retained"
+    },
+    {
+      "path": "assets/framework.png",
+      "bytes": 797853,
+      "sha256": "268f111574b597e9d30d136b4ae8608b8852d7450d75d41c6b76768c04a2b783",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/preservation/presentations/artifacts/editable_architecture_output_v2/editable_architecture_output_completed_v2.pptx",
+      "source_sha256": "40318293fcd87e632edfce2853a1c7d09781c051ceb32a71bd43848983c35ef4",
+      "preparation": "PyMuPDF 2x rasterization of the exported PDF; original slide layout retained"
+    },
+    {
+      "path": "docs/benchmarks/DATASET_METRICS.csv",
+      "bytes": 7257,
+      "sha256": "172e9d3047a37a24ea944b6c0aa9f9f941126c3ac6c168cfb784b978d91cf7b3",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/results/C512_first96/formal/DATASET_METRICS.csv",
+      "source_sha256": "172e9d3047a37a24ea944b6c0aa9f9f941126c3ac6c168cfb784b978d91cf7b3",
+      "preparation": "unchanged copy"
+    },
+    {
+      "path": "docs/benchmarks/PLOTTED_POINTS.csv",
+      "bytes": 182720,
+      "sha256": "ee1cf704b15bcde23f64e315e120c0f1c5c874dd6eabeeac9c951d1769a88b64",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/rd_revision_v6/PLOTTED_POINTS.csv",
+      "source_sha256": "ee1cf704b15bcde23f64e315e120c0f1c5c874dd6eabeeac9c951d1769a88b64",
+      "preparation": "unchanged copy"
+    },
+    {
+      "path": "docs/benchmarks/FIGURE_SOURCE_NOTES.md",
+      "bytes": 4972,
+      "sha256": "f3a707092a220e2138c600d3bf90aec03cb4dc0866c59a1f479f8c0904ae37a6",
+      "source": "/qzwang/data/raqvc_artifacts/C512_FINAL_v1/rd_revision_v6/README.md",
+      "source_sha256": "f3a707092a220e2138c600d3bf90aec03cb4dc0866c59a1f479f8c0904ae37a6",
+      "preparation": "unchanged copy"
+    }
+  ]
+}
