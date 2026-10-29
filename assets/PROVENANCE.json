@@ -31,14 +31,14 @@
     {
       "path": "docs/benchmarks/DATASET_METRICS.csv",
       "content": "dataset_metrics",
-      "bytes": 7257,
-      "sha256": "172e9d3047a37a24ea944b6c0aa9f9f941126c3ac6c168cfb784b978d91cf7b3"
+      "bytes": 5984,
+      "sha256": "0e0f1704e53aef094f350202f5676926a0d16bd10119c8b34a1f63046314f172"
     },
     {
       "path": "docs/benchmarks/PLOTTED_POINTS.csv",
       "content": "plotted_points",
-      "bytes": 117614,
-      "sha256": "6f19c0105b69883bb41449ebd38c2402f4f18fd0adfc5b750994972a59e1eb75"
+      "bytes": 109956,
+      "sha256": "cd921d7f39304d5cfaa2be81f502a0d859b56972dfd57b0be6ce543af40648b1"
     }
   ]
 }

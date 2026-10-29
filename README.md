@@ -99,14 +99,14 @@ The original sequence-bpp and displayed-frame LPIPS labels are retained. Each me
 
 These **QP63** rows come from the released [dataset metrics CSV](docs/benchmarks/DATASET_METRICS.csv).
 
-| Resolution | Dataset | Videos | Payload bpp | PSNR ↑ | LPIPS-VGG ↓ | DISTS ↓ | Patch FID ↓ | FloLPIPS ↓ |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| 1080p | HEVC-B | 5 | 0.006201 | 26.1360 | 0.3042 | 0.0725 | 26.9219 | 0.1810 |
-| 1080p | UVG | 7 | 0.005290 | 28.9444 | 0.2734 | 0.0792 | 25.9373 | 0.1488 |
-| 1080p | MCL-JCV | 30 | 0.005376 | 28.0211 | 0.2946 | 0.0932 | 15.2820 | 0.1637 |
-| 720p | HEVC-B | 5 | 0.006745 | 25.6649 | 0.3039 | 0.0783 | 36.5654 | 0.1828 |
-| 720p | UVG | 7 | 0.005369 | 28.8629 | 0.2765 | 0.0867 | 35.2644 | 0.1575 |
-| 720p | MCL-JCV | 30 | 0.005886 | 27.3766 | 0.3048 | 0.1024 | 22.6745 | 0.1709 |
+| Resolution | Dataset | Videos | Payload bpp | PSNR ↑ | LPIPS-VGG ↓ | DISTS ↓ | Patch FID ↓ |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1080p | HEVC-B | 5 | 0.006201 | 26.1360 | 0.3042 | 0.0725 | 26.9219 |
+| 1080p | UVG | 7 | 0.005290 | 28.9444 | 0.2734 | 0.0792 | 25.9373 |
+| 1080p | MCL-JCV | 30 | 0.005376 | 28.0211 | 0.2946 | 0.0932 | 15.2820 |
+| 720p | HEVC-B | 5 | 0.006745 | 25.6649 | 0.3039 | 0.0783 | 36.5654 |
+| 720p | UVG | 7 | 0.005369 | 28.8629 | 0.2765 | 0.0867 | 35.2644 |
+| 720p | MCL-JCV | 30 | 0.005886 | 27.3766 | 0.3048 | 0.1024 | 22.6745 |
 
 The CSV contains **24 dataset/resolution/QP aggregates** covering **336 video/resolution/QP cases** across 42 videos.
 
@@ -118,7 +118,7 @@ The CSV contains **24 dataset/resolution/QP aggregates** covering **336 video/re
 - 1080p: reflect-pad to 1920×1088 for coding, crop to 1920×1080 for scoring.
 - 720p: center-crop original sources to 1280×736 for coding, then to 1280×720 for scoring; no resizing.
 - Rate: actual rANS payload bits / (coded frames × coded-canvas pixels); container/header bytes are excluded.
-- Float-domain spatial metrics, dataset-pooled dual-grid 256-patch  FID, and 95 adjacent-frame FloLPIPS pairs.
+- Float-domain spatial metrics and dataset-pooled dual-grid 256-patch FID.
 
 See the [evaluation specification](docs/TESTING.md) for input geometry, rate accounting and metric aggregation.
 

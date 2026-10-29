@@ -25,8 +25,6 @@ Preview videos are for visualization and are not used for scoring.
 
 Patch FID uses 256×256 patches from the regular and 128-pixel-offset grids.
 Pool feature statistics over each dataset before computing FID.
-FloLPIPS covers all 95 adjacent pairs, including GOP boundaries; report undefined
-pairs explicitly.
 
 ## Commands
 

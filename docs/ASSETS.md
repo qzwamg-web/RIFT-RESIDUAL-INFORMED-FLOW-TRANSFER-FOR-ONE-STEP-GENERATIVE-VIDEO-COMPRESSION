@@ -12,7 +12,7 @@ inference commands require a complete resource bundle.
 | Image codec initializer | Intra-frame latent codec initialization |
 | Video codec initializer | Predictive latent codec initialization |
 | Training indices | 256- and 512-pixel latent-cache indices and shard locations |
-| Metric weights | LPIPS, DISTS, FID and FloLPIPS dependencies |
+| Metric weights | LPIPS, DISTS and FID dependencies |
 | Source videos | HEVC-B, UVG and MCL-JCV for evaluation |
 
 [MODEL_SHA256.json](MODEL_SHA256.json) identifies model components by checksum.

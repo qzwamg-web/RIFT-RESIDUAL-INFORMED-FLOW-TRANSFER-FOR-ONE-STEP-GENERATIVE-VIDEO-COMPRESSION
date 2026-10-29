@@ -32,7 +32,7 @@ python scripts/final.py preflight
 
 Dataset indices also contain shard and source-video paths; update these when
 moving data. Preflight checks required files without downloading them.
-LPIPS, DISTS, FID and FloLPIPS require their corresponding metric weights.
+LPIPS, DISTS and FID require their corresponding metric weights.
 
 The reference 512-pixel training configuration uses approximately 75 GiB of GPU
 memory. Run a smoke check before choosing the batch size:
