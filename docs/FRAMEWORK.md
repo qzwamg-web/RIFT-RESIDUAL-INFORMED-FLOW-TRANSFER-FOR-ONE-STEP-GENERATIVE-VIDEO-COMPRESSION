@@ -1,15 +1,41 @@
-# C512 恢复框架
+# RIFT architecture
 
-输入RGB经冻结Wan VAE得到48通道latent。固定的I/P latent codec按QP进行区域量化、熵编码及解码，得到zq和decoder可见的尺度、量化宽度、QP及latent帧角色。
+RIFT compresses video in the latent space of a frozen video VAE and restores
+the decoded representation with one video DiT forward pass per GOP.
 
-`training/c512.py`严格加载完整状态，`training/restoration.py`是训练/测试共用端点。
+## Compression
 
-1. `base_heads.py`：多尺度误差估计p和共享特征h；尺度校正与归一化几何融合得到s；保留继承的方向残差和token标量gain。
-2. `backbone/c512_dit.py`：固定QP时间表，整段latent一次Wan调用。原codec上下文、空间条件及可靠性注意力继续生效；没有跨GOP记忆。
-3. `base_restoration.py`：得到基准更新u0。QP/global及局部gain均与tau独立。
-4. `residual_heads.py`：独立全频局部RMS预测rhat，I/P投影与归一化帧位置；方向分支结合邻域上下文、基准单位方向和rhat预测修正。
-5. `restoration.py`：d = normalize(e0 + beta_IP (d_candidate-e0))；n=||u0||_2,channel；m=exp(log(2)tanh(ell))；a=n*m。最终数学表达为z_hat=zq+a*d。实现保留原更新/相加顺序以维持浮点数值一致性。
+The VAE maps RGB frames to a 48-channel latent representation. Learned intra-
+and predictive-frame transforms, regional quantization and entropy coding
+produce a bitstream. Entropy decoding and synthesis yield `z_q`.
 
-RMS是局部通道能量描述，不声称完整表征残差分布，也不要求不同QP残差共线。单位方向是每个latent位置的48维通道方向。
+Decoder-visible conditions include entropy scales, quantization widths, QP
+and latent frame role. The restoration model uses these conditions without
+access to the original video.
 
-历史checkpoint中的未调用时间头和未使用预测器参数只在加载时按明确白名单过滤；其余活动权重严格核对。类和state_dict键保留兼容性，源码文件名改成实际功能名称。
+## Residual-informed flow transfer
+
+1. A multi-scale estimator predicts local error features and strength.
+2. A fixed QP-to-time lookup conditions a single whole-GOP DiT call.
+3. Direction adaptation and base gain modulation produce a base correction.
+4. A full-band RMS estimator supplies local residual-strength information.
+5. Angular direction refinement and local magnitude modulation form the update.
+
+For a base update `u_0`, unit direction `d` and local magnitude factor `m`:
+
+```text
+n = ||u_0||_2,channel
+m = exp(log(2) * tanh(ell))
+a = n * m
+z_hat = z_q + a * d
+```
+
+Direction is a 48-dimensional unit vector at each latent position. Magnitude
+is a local scalar map. The VAE decoder maps the restored latent to RGB.
+
+| QP | 0 | 16 | 39 | 63 |
+|---|---:|---:|---:|---:|
+| DiT time | 520 | 640 | 800 | 960 |
+
+Training and inference share [the restoration implementation](../raqvc/training/restoration.py).
+The model uses fixed times, independent GOPs and rank-8 LoRA adaptation.

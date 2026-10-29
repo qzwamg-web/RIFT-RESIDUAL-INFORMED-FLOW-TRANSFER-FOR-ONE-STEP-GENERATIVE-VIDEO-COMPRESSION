@@ -1,58 +1,61 @@
 {
   "schema": 1,
-  "created_utc": "2026-10-29T07:50:23.864180+00:00",
-  "source_archive": "C512_FINAL_v1",
-  "selection_manifest": "subjective1080/SELECTION_MANIFEST.json",
-  "selection_manifest_sha256": "efb11e634df51568f9a40c5a139080f3f5c421cfe43efd391d661fbc639e36a2",
-  "evaluation_status": "Archived C512 paper visual samples, not a new evaluation or a dcvc_float reproduction.",
-  "source_decode": "No source videos were decoded for this gallery; existing PNGs were reused.",
-  "operating_points": "Each method uses its own lowest-rate point. GLC QP0 rates are official entropy estimates; RIFT C512 QP63 rates are actual rANS payload rates. Not matched-bitrate comparisons.",
-  "frame_indexing": "zero-based, as recorded in the preserved selection manifest",
+  "description": "Original, GLC and RIFT qualitative comparison images.",
+  "operating_points": "Each method uses its own lowest-rate point. GLC QP0 rates are official entropy estimates; RIFT QP63 rates are actual rANS payload rates. Not matched-bitrate comparisons.",
+  "frame_indexing": "zero-based",
   "files": [
     {
       "path": "docs/comparisons/media/bosphorus/original.webp",
       "sha256": "19d77991f0322e886d9949ce6dafd558cd1bde6b927baa9ce80b641900dff4b3",
       "bytes": 1348396,
-      "source_archive_path": "subjective1080/assets/Bosphorus_1920x1080_120fps_420_8bit_YUV_frame066_GT.png",
       "source_sha256": "11aae1105c8ccb5e4fe4321589f267c7ed3a8138d02d00d807546e6d5a2401f4",
       "rgb_pixels_sha256": "2d1b5fe1f500d2aff0bb8a6b8a96f668344efeddc4c2d439b4f1e22c1f55aacb",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "UVG",
+      "sequence": "Bosphorus_1920x1080_120fps_420_8bit_YUV",
+      "frame_index": 66,
+      "method": "original",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/bosphorus/glc.webp",
       "sha256": "f03f7200983c00bf182ef62e2f8f041d762d5e78190cbfb6214e79477c6a8e65",
       "bytes": 1998966,
-      "source_archive_path": "subjective1080/evaluations/GLC-Video/Bosphorus_1920x1080_120fps_420_8bit_YUV/metrics/UVG/Bosphorus_1920x1080_120fps_420_8bit_YUV/qp0/frames/000066.png",
       "source_sha256": "88ab21150faae7f695761201a49974428fddadbb26b7706b62bdcb85862c24e7",
       "rgb_pixels_sha256": "5ed50bdfbce4567cf96ca29fff1fe9d2a264d23cc7ad7bb39fd2b11d71e63142",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "UVG",
+      "sequence": "Bosphorus_1920x1080_120fps_420_8bit_YUV",
+      "frame_index": 66,
+      "method": "glc",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/bosphorus/rift.webp",
       "sha256": "6f008d399b36fb2bcb50c63c627f4b7c3339c7898ab56bf36a6dffa0f0bdb4cd",
       "bytes": 1804960,
-      "source_archive_path": "results/C512_first96/formal/metrics/1080/UVG/Bosphorus_1920x1080_120fps_420_8bit_YUV/qp63/frames_lossless/000066.png",
       "source_sha256": "acf5092876b2d6d666796f006a7df3491797975bfe6ef098a483a80ecaea26cd",
       "rgb_pixels_sha256": "3726f5e140f6434cd4dec870a2dd4fb4967a4d2553d4c208fa63e9d03267baca",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "UVG",
+      "sequence": "Bosphorus_1920x1080_120fps_420_8bit_YUV",
+      "frame_index": 66,
+      "method": "rift",
+      "encoding": "lossless WebP"
     },
     {
       "path": "assets/comparison_bosphorus.png",
       "sha256": "4670735fd58df997b68181545bfce72b5ca53017b64169a9819d7b9624592a6e",
       "bytes": 550417,
-      "preparation": "Preview contact sheet using the same three archived images. Full-frame thumbnails and the same ROI for every method; no generated image content.",
       "scene": "bosphorus",
       "roi": [
         960,
@@ -69,46 +72,54 @@
       "path": "docs/comparisons/media/mcl12/original.webp",
       "sha256": "29a4ebf0124478edb521e5cd60ad9eeed7715678d3cf16be5452a9562eecdea8",
       "bytes": 1340444,
-      "source_archive_path": "subjective1080/assets/videoSRC12_1920x1080_30_frame041_GT.png",
       "source_sha256": "590cb25906492960f8c614540d94fa92500feb36abfb213fdb4ae7588c708762",
       "rgb_pixels_sha256": "b0d22aff4f58586a992e54ae0ec08f4e97ecc1ecd08b1138e9142d2066ecc6ed",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC12_1920x1080_30",
+      "frame_index": 41,
+      "method": "original",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/mcl12/glc.webp",
       "sha256": "28fe224bf30fb17e60c3a726d0bdbfafebb1a0e03ebf9f9413dbc05186f64349",
       "bytes": 2113696,
-      "source_archive_path": "subjective1080/evaluations/GLC-Video/videoSRC12_1920x1080_30/metrics/MCL-JCV/videoSRC12_1920x1080_30/qp0/frames/000041.png",
       "source_sha256": "b3522efd0043e9b985fc93fb9f9950f3690a73b9e7857df3f28b784c471acf4e",
       "rgb_pixels_sha256": "b0504991245ea48180bb1586c61be05b59fefc4554622b5915bc08e98e650ad8",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC12_1920x1080_30",
+      "frame_index": 41,
+      "method": "glc",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/mcl12/rift.webp",
       "sha256": "61984e58a9ecc4d3e40559e1c5a9f5a41c0ef65116f28ada5c569b55d12b1e36",
       "bytes": 1907386,
-      "source_archive_path": "results/C512_first96/formal/metrics/1080/MCL-JCV/videoSRC12_1920x1080_30/qp63/frames_lossless/000041.png",
       "source_sha256": "853b2a7d2a7fbe330da1dc38001c254980e56f89da66b545e19a240572f3ff7c",
       "rgb_pixels_sha256": "279ad328a112719a0d9eff7b7b8f984775d0a49d8f7506cd1e74df352de05572",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC12_1920x1080_30",
+      "frame_index": 41,
+      "method": "rift",
+      "encoding": "lossless WebP"
     },
     {
       "path": "assets/comparison_mcl12.png",
       "sha256": "9d5324590518633828fa5528af5056f384bb74b8fd25fd526ef8ac178d768c8b",
       "bytes": 673649,
-      "preparation": "Preview contact sheet using the same three archived images. Full-frame thumbnails and the same ROI for every method; no generated image content.",
       "scene": "mcl12",
       "roi": [
         1440,
@@ -125,46 +136,54 @@
       "path": "docs/comparisons/media/mcl03/original.webp",
       "sha256": "3f1bc075c4492b7c0a1df74c5008621980781f15a4f1876df7a8250bc1795acf",
       "bytes": 1411472,
-      "source_archive_path": "subjective1080/assets/videoSRC03_1920x1080_30fps_frame089_GT.png",
       "source_sha256": "1466285cb812bbb2cbe687e8add00f4e5a6f168dabec03dfd3b80ddc11bc892d",
       "rgb_pixels_sha256": "f8d22c595c3ed6473bfb1f439bb816233fbb378775e86fd7c1c1d1f23f303144",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC03_1920x1080_30fps",
+      "frame_index": 89,
+      "method": "original",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/mcl03/glc.webp",
       "sha256": "bfcd975dcf1ea3e94d092df64ab5f0524c239f557e5a0b585059402fd78d46c6",
       "bytes": 1950884,
-      "source_archive_path": "subjective1080/evaluations/GLC-Video/videoSRC03_1920x1080_30fps/metrics/MCL-JCV/videoSRC03_1920x1080_30fps/qp0/frames/000089.png",
       "source_sha256": "c74de3b1f15b57c005bfb36a9fbc789c19e1e6d0a673f41e63d401f0da837c05",
       "rgb_pixels_sha256": "cc82948c3be2fa327921a9df76f6352ebb96f93d1166441f8cf6503502351087",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC03_1920x1080_30fps",
+      "frame_index": 89,
+      "method": "glc",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/mcl03/rift.webp",
       "sha256": "2eec7be076dcb18bfd2b6669f1d8098ced50683de6bb116936c9c801d0bd5ba4",
       "bytes": 1879234,
-      "source_archive_path": "results/C512_first96/formal/metrics/1080/MCL-JCV/videoSRC03_1920x1080_30fps/qp63/frames_lossless/000089.png",
       "source_sha256": "eb9fe344bfa4633c426e3bbb4bf1332753e98f5804a3912a404385533c193500",
       "rgb_pixels_sha256": "9df15f661c39100972e49f0461c6073fe64a869986255113d78ea8049133abe4",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC03_1920x1080_30fps",
+      "frame_index": 89,
+      "method": "rift",
+      "encoding": "lossless WebP"
     },
     {
       "path": "assets/comparison_mcl03.png",
       "sha256": "548bee2a82b9c6ced16d95d6f7fbe0a17fe3729ea04f0703505847a72c30a1d1",
       "bytes": 617770,
-      "preparation": "Preview contact sheet using the same three archived images. Full-frame thumbnails and the same ROI for every method; no generated image content.",
       "scene": "mcl03",
       "roi": [
         384,
@@ -181,46 +200,54 @@
       "path": "docs/comparisons/media/bqterrace/original.webp",
       "sha256": "968f77d3c0eb8ac3305d2bacd95906eb8d371532fd2d3bde66b22871ea923c5e",
       "bytes": 1929600,
-      "source_archive_path": "subjective1080/assets/BQTerrace_1920x1080_60fps_frame000_GT.png",
       "source_sha256": "9deaa400259ed57738cd0c67d9d26dc88773dfb6752e563f9602e9748b0c6b05",
       "rgb_pixels_sha256": "acd9bf5982a66de6f26621fbaa9189f35eb791e87937c9e4f35041a5c70747bd",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "HEVC-B",
+      "sequence": "BQTerrace_1920x1080_60fps",
+      "frame_index": 0,
+      "method": "original",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/bqterrace/glc.webp",
       "sha256": "6057ad51cac9e93db5ca3a5c82be3e1590c429aac030cecfba7e80ec9fbb9b0f",
       "bytes": 2831092,
-      "source_archive_path": "subjective1080/evaluations/GLC-Video/BQTerrace_1920x1080_60fps/metrics/HEVC_B/BQTerrace_1920x1080_60fps/qp0/frames/000000.png",
       "source_sha256": "d308c9d5b86e69dd207ec51caa224ee890ebd3ba7a50f2dcf343d74878666be9",
       "rgb_pixels_sha256": "cab9387602d97c022dee1fb065b889aa0cdcc30d8c97d16f657e11d74b4f2b5f",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "HEVC-B",
+      "sequence": "BQTerrace_1920x1080_60fps",
+      "frame_index": 0,
+      "method": "glc",
+      "encoding": "lossless WebP"
     },
     {
       "path": "docs/comparisons/media/bqterrace/rift.webp",
       "sha256": "0a70c3430000b51d51740c682b60aa8c3d78583b40fb131ca0e46c4f569a5254",
       "bytes": 2391742,
-      "source_archive_path": "results/C512_first96/formal/metrics/1080/HEVC_B/BQTerrace_1920x1080_60fps/qp63/frames_lossless/000000.png",
       "source_sha256": "fc5d37defc2c0f135c7068be2018f587c1af79913e8d799b051573bb00f4b0a4",
       "rgb_pixels_sha256": "78a61e08cd7804d46aa3efe87fdac07a768aee7f3d0d65147d4fb9298f693e7a",
       "dimensions": [
         1920,
         1080
       ],
-      "preparation": "Lossless WebP; exact equality of decoded RGB pixels verified; no resize or color conversion from raw video."
+      "dataset": "HEVC-B",
+      "sequence": "BQTerrace_1920x1080_60fps",
+      "frame_index": 0,
+      "method": "rift",
+      "encoding": "lossless WebP"
     },
     {
       "path": "assets/comparison_bqterrace.png",
       "sha256": "ffcc32386266f7aa45ec97eef6d8a3710202b4313d99cdac98190f585a7a26f0",
       "bytes": 768764,
-      "preparation": "Preview contact sheet using the same three archived images. Full-frame thumbnails and the same ROI for every method; no generated image content.",
       "scene": "bqterrace",
       "roi": [
         960,
@@ -237,45 +264,53 @@
       "path": "docs/comparisons/media/bosphorus/thumb.webp",
       "bytes": 64478,
       "sha256": "2ea12c54612b9ca7dbd26d1158423f2d972ad58e911aa38d1602a623873aac19",
-      "source_gallery_path": "docs/comparisons/media/bosphorus/original.webp",
       "dimensions": [
         320,
         180
       ],
-      "preparation": "Small navigation preview resized from the archived original. Full-resolution comparison files remain unchanged."
+      "dataset": "UVG",
+      "sequence": "Bosphorus_1920x1080_120fps_420_8bit_YUV",
+      "frame_index": 66,
+      "method": "thumb"
     },
     {
       "path": "docs/comparisons/media/mcl12/thumb.webp",
       "bytes": 72850,
       "sha256": "d65765aabbb959c7616a3400c5fa7fdcdc36fadfe36065727f6357b9826524fb",
-      "source_gallery_path": "docs/comparisons/media/mcl12/original.webp",
       "dimensions": [
         320,
         180
       ],
-      "preparation": "Small navigation preview resized from the archived original. Full-resolution comparison files remain unchanged."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC12_1920x1080_30",
+      "frame_index": 41,
+      "method": "thumb"
     },
     {
       "path": "docs/comparisons/media/mcl03/thumb.webp",
       "bytes": 65902,
       "sha256": "a1f643dc58968e4eeeb60396a568f2b8b84018c75e4d0f83da31f4b24c33a357",
-      "source_gallery_path": "docs/comparisons/media/mcl03/original.webp",
       "dimensions": [
         320,
         180
       ],
-      "preparation": "Small navigation preview resized from the archived original. Full-resolution comparison files remain unchanged."
+      "dataset": "MCL-JCV",
+      "sequence": "videoSRC03_1920x1080_30fps",
+      "frame_index": 89,
+      "method": "thumb"
     },
     {
       "path": "docs/comparisons/media/bqterrace/thumb.webp",
       "bytes": 79904,
       "sha256": "a742c392cd5f22bab627a1ca77837268480ebb0bf3d4875ecd352168e7cb465e",
-      "source_gallery_path": "docs/comparisons/media/bqterrace/original.webp",
       "dimensions": [
         320,
         180
       ],
-      "preparation": "Small navigation preview resized from the archived original. Full-resolution comparison files remain unchanged."
+      "dataset": "HEVC-B",
+      "sequence": "BQTerrace_1920x1080_60fps",
+      "frame_index": 0,
+      "method": "thumb"
     }
   ]
 }

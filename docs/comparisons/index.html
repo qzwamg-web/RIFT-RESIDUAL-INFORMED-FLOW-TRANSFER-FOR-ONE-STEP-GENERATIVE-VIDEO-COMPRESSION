@@ -24,7 +24,7 @@
     <nav id="scene-picker" class="scene-picker" aria-label="Choose a scene"></nav>
     <article class="comparison-shell" id="comparison-shell">
       <div class="viewer-toolbar">
-        <div><p id="scene-meta" class="eyebrow">1080p / archived paper samples</p><h2 id="scene-title">Loading comparison…</h2></div>
+        <div><p id="scene-meta" class="eyebrow">1080p / visual comparison</p><h2 id="scene-title">Loading comparison…</h2></div>
         <div class="toolbar-controls">
           <div class="view-switch" aria-label="Image region">
             <button id="detail-view" type="button" aria-pressed="false">Detail crop</button>
@@ -77,8 +77,8 @@
     </section>
     <details class="provenance">
       <summary>Sample provenance &amp; operating points</summary>
-      <p>These are the four preserved C512 paper examples, using each method’s own lowest-rate operating point. They are not matched-bitrate comparisons. RIFT is C512 QP63; GLC is QP0. A star marks GLC’s official entropy-estimated bpp; RIFT uses actual rANS payload bpp.</p>
-      <p>Existing archived PNGs were reused without decoding source videos. The served WebP files have exactly the same decoded RGB pixels. Full-frame and detail views share the same images and crop coordinates across all methods. Frame indices follow the original zero-based manifest. This gallery preserves the historical visual-sample protocol; it is not a new evaluation or a dcvc_float reproduction.</p>
+      <p>These four examples use each method’s own lowest-rate operating point. They are not matched-bitrate comparisons. RIFT is QP63; GLC is QP0. A star marks GLC’s official entropy-estimated bpp; RIFT uses actual rANS payload bpp.</p>
+      <p>The full-resolution WebP files are lossless. Full-frame and detail views use the same crop coordinates across all methods. Frame indices are zero-based.</p>
       <p><a href="PROVENANCE.json">Source and pixel hashes</a> · <a href="data.json">Frame, crop and rate metadata</a></p>
     </details>
     <noscript><p class="load-error">Enable JavaScript to use the sliders. The lossless images and metadata are available in <a href="data.json">data.json</a>.</p></noscript>

@@ -1,4 +1,4 @@
-"""Import the immutable Stage3 base and install C512 rank-8 LoRA.
+"""Import the immutable Stage3 base and install RIFT rank-8 LoRA.
 
 Dropped historical tensors belong exclusively to unused cache writers/clocks.
 All active tensors are required; an unknown key is an error.

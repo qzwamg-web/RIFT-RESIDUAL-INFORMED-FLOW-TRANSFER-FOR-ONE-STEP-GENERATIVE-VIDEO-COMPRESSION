@@ -1,4 +1,4 @@
-"""Compare the cleaned C512 runtime against immutable pre-cleanup GPU outputs."""
+"""Compare the cleaned RIFT runtime against immutable pre-cleanup GPU outputs."""
 import argparse
 import json
 import sys

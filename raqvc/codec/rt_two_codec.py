@@ -1,4 +1,4 @@
-"""C512 fixed 48-channel I/P latent codec with actual rANS coding.
+"""RIFT fixed 48-channel I/P latent codec with actual rANS coding.
 DCVC-RT analysis/synthesis and the selected regional quantizer are retained.
 Unsupported historical model configurations are rejected by the factory.
 """

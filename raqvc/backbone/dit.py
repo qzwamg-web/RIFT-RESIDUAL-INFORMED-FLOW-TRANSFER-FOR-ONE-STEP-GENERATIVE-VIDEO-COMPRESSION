@@ -1,4 +1,4 @@
-"""Wan backbone with the context and velocity adapters used by C512."""
+"""Wan backbone with the context and velocity adapters used by RIFT."""
 
 from pathlib import Path
 import sys

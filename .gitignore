@@ -37,3 +37,7 @@ id_rsa*
 # Intentional GitHub documentation assets.
 !assets/*.png
 !assets/*.jpg
+
+# Local resources and generated outputs.
+data/
+outputs/

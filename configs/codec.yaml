@@ -1,7 +1,7 @@
 codec:
   type: rt_two_codec
-  image_checkpoint_path: /qzwang/data/raqvc_artifacts/C512_FINAL_v1/model/codec_initializers/cvpr2025_image.pth.tar
-  video_checkpoint_path: /qzwang/data/raqvc_artifacts/C512_FINAL_v1/model/codec_initializers/cvpr2025_video.pth.tar
+  image_checkpoint_path: /path/to/codec_initializers/cvpr2025_image.pth.tar
+  video_checkpoint_path: /path/to/codec_initializers/cvpr2025_video.pth.tar
   device: cuda:0
   normalize_latent: false
   latent_init_mode: scratch

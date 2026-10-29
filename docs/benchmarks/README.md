@@ -1,31 +1,27 @@
-# Benchmark and figure provenance
+# Benchmark data
 
-`DATASET_METRICS.csv` is an unchanged copy of the preserved C512 first96 formal
-summary:24 rows, three datasets × four QPs × two resolutions, covering336
-video/resolution/QP cases. The root README table is checked against this CSV.
+[DATASET_METRICS.csv](DATASET_METRICS.csv) contains 24 dataset/resolution/QP
+aggregates for HEVC-B, UVG and MCL-JCV at 720p and 1080p. The evaluation covers
+42 videos, four QPs and 336 video/resolution/QP cases.
+The [evaluation specification](../TESTING.md) defines geometry, metrics and rate.
 
-[Historical RIFT protocol](../TESTING.md):96 genuine encoded/scored frames,
-GOP25/25/25/21, float metrics and coded-canvas rANS **payload** bpp excluding
-container/header bytes. This is distinct from later97-encoded/96-scored protocols.
-HEVC-B/UVG/MCL-JCV have5/7/30 videos. FID pools dual-grid256patch statistics per dataset.
+## Rate-distortion figure
 
-## R–D figure
+The red solid curves in `assets/rd_perceptual_1080p.png` are RIFT measurements.
+Dashed 1080p baseline curves are digitized published figure data, including GLC
+on UVG. They retain the papers' original protocols and rate conventions.
 
-The preserved `rd_revision_v6/RIFT_1080P_perceptual_3datasets.png` is copied unchanged
-to `assets/perceptual_rd_1080.png`. Red solid RIFT curves are local measurements.
-All dashed1080p baselines, including GLC on UVG, are digitized published figures
-with their original rate/evaluation conventions. They are not local reproductions.
+[PLOTTED_POINTS.csv](PLOTTED_POINTS.csv) records the plotted values, method,
+metric, dataset, resolution, rate kind and source. Its provenance labels identify
+RIFT evaluation, baseline evaluation or published figures with figure/page
+references. Published curves are not local reproductions. Points are not
+smoothed, extrapolated or synthesized.
 
-`PLOTTED_POINTS.csv` retains values, sources and rate kinds; `FIGURE_SOURCE_NOTES.md`
-preserves the original construction notes. Local paths in provenance fields are
-source records, not bundled files or download URLs. No GPU run/curve was regenerated.
+## Qualitative examples
 
-## Qualitative panels
+Each method uses its own lowest-rate point. GLC rates marked with a star are
+official entropy estimates; RIFT rates are actual rANS payload rates.
+These examples are not matched-bitrate comparisons.
 
-The unchanged teaser/comparison previews come from `subjective1080/ppt/preview`.
-Each method uses its own lowest-rate point; starred bpp values are entropy estimates.
-These are not equal-rate or identical-input-protocol comparisons.
-
-Media hashes/source paths are recorded in [`assets/PROVENANCE.json`](../../assets/PROVENANCE.json).
-The framework figure is exported from the existing architecture PowerPoint in the
-data archive; its original editable file is included as `assets/framework.pptx`.
+See [interactive comparisons](../comparisons/README.md) for frame indices,
+shared crop coordinates and lossless images.

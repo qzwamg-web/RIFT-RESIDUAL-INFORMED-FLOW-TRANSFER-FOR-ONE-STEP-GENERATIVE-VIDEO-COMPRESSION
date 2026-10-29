@@ -1,7 +1,7 @@
-"""H2 replay under the published crop/frame/patch-FID protocol; no training.
+"""RIFT evaluation under the published crop/frame/patch-FID protocol; no training.
 
 Full 42-video runs resume at completed QPs and finish with dataset-separated
-plots. Inference uses the exact shared H2 load_bundle / endpoint / hard codec.
+plots. Inference uses the exact shared RIFT load_bundle / endpoint / hard codec.
 """
 
 from __future__ import annotations

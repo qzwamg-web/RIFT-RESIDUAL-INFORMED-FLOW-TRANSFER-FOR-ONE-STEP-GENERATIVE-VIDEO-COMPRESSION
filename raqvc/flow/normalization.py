@@ -1,4 +1,4 @@
-"""Fixed QP normalization used by the C512 velocity interface."""
+"""Fixed QP normalization used by the RIFT velocity interface."""
 
 from __future__ import annotations
 from dataclasses import dataclass

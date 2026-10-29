@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C512: one command for preflight, smoke, training, evaluation and timing."""
+"""RIFT: one command for preflight, smoke, training, evaluation and timing."""
 
 import argparse
 import datetime

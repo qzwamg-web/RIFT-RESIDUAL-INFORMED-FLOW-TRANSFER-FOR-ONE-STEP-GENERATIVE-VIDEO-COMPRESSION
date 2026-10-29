@@ -75,7 +75,7 @@ def invalidate_entropy_coders(codec):
 
 
 def _active_heads(state):
-    """Drop only explicitly identified inactive tensors in historical C512 files."""
+    """Drop only explicitly identified inactive tensors in historical RIFT files."""
     retired = (
         "base.tau_global",
         "base.tau_local.",

@@ -232,7 +232,7 @@ def main():
         clean, target, c, rate, actual = prepare(row, qp, True)
         if not c.source.requires_grad or not rate.requires_grad:
             raise RuntimeError("codec joint gradient disconnected")
-        # Same codec-only safeguard as C512. Backprop separately to release its
+        # Same codec-only safeguard as RIFT. Backprop separately to release its
         # VAE/metric graph before constructing the larger restoration graph.
         with torch.autocast("cuda", dtype=torch.bfloat16):
             codec_rgb = decode_latent_batch(vae, c.source, batch_size=1)

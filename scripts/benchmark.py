@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure actual H2 encode/decode time and opt-in VAE throughput variants."""
+"""Measure RIFT encode/decode time and opt-in VAE throughput variants."""
 
 from __future__ import annotations
 import argparse

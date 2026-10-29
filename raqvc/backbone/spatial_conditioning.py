@@ -1,4 +1,4 @@
-"""C512 deterministic spatial conditioning from decoded latent evidence.
+"""RIFT deterministic spatial conditioning from decoded latent evidence.
 This module adds a learned conditioning residual; it does not inject random noise.
 """
 

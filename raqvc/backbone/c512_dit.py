@@ -1,6 +1,6 @@
-"""C512 single-call restoration. Fixed QP time; independent GOPs.
+"""RIFT single-call restoration. Fixed QP time; independent GOPs.
 
-Only decoder-visible context used by the selected C512 checkpoint is retained.
+Only decoder-visible context used by the selected RIFT checkpoint is retained.
 There is no dynamic time mapper, time-scaled velocity, or cross-GOP KV input.
 Legacy class names remain solely for checkpoint/import compatibility.
 """
@@ -35,7 +35,7 @@ class Task438QPSolverCalibrator(nn.Module):
 
 
 class Task438WindowedDiT(nn.Module):
-    """The deployed C512 backbone and its active inherited conditioning."""
+    """The deployed RIFT backbone and its active inherited conditioning."""
 
     def __init__(self, backbone):
         super().__init__()

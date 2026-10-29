@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H2 full-chain continuation; shared runtime, online codec, resumable schedule."""
+"""RIFT joint fine-tuning; shared runtime, online codec, resumable schedule."""
 
 from __future__ import annotations
 import argparse

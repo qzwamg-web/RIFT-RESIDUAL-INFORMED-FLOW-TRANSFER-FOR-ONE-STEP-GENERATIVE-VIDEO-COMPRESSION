@@ -1,4 +1,4 @@
-"""Fixed four-QP context embedding used by C512."""
+"""Fixed four-QP context embedding used by RIFT."""
 
 import torch
 from torch import nn

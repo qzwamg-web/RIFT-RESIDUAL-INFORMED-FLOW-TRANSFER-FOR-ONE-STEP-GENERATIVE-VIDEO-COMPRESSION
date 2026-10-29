@@ -1,28 +1,35 @@
-# External assets
+# Model and dataset resources
 
-No checkpoints or datasets are stored in this Git branch. Set RAQVC_ARTIFACTS to
-the directory containing C512_FINAL_v1; `scripts/final.py preflight` lists missing
-assets without downloading them. Its default layout is:
+Model weights and licensed datasets are not included in this repository.
+Public checkpoint download links are not yet available. The training and
+inference commands require a complete resource bundle.
 
-```
-C512_FINAL_v1/model/C512_original_bundle.pt
-C512_FINAL_v1/model/stage3_dit_reproduction.pt
-C512_FINAL_v1/model/wan/vae.pth
-C512_FINAL_v1/model/wan/low_noise_model/diffusion_pytorch_model.bin
-C512_FINAL_v1/model/codec_initializers/cvpr2025_image.pth.tar
-C512_FINAL_v1/model/codec_initializers/cvpr2025_video.pth.tar
-C512_FINAL_v1/datasets/256/index.json
-C512_FINAL_v1/datasets/512/index.json
-```
+| Component | Purpose |
+|---|---|
+| RIFT checkpoint | Trained codec, conditioning, restoration modules and LoRA parameters |
+| Pretrained backbone | Matching video DiT base weights |
+| Video VAE | Encoder and decoder weights |
+| Image codec initializer | Intra-frame latent codec initialization |
+| Video codec initializer | Predictive latent codec initialization |
+| Training indices | 256- and 512-pixel latent-cache indices and shard locations |
+| Metric weights | LPIPS, DISTS, FID and FloLPIPS dependencies |
+| Source videos | HEVC-B, UVG and MCL-JCV for evaluation |
 
-The original bundle is the trained codec/adapters/heads/LoRA delta. Stage3 and Wan
-bases complete the model; do not load only the delta as a full pretrained DiT.
-`MODEL_SHA256.json` records the retained local assets for integrity, not a public
-download promise. Dataset index files reference external raw videos/shards by
-path; update those paths when moving machines. See TRAINING.md for LR/batch and
-TESTING.md for the42-video source list/protocol. Headless ablation is a separate
-loader (`train_headless.py` / `evaluate_headless.py`).
+[MODEL_SHA256.json](MODEL_SHA256.json) identifies model components by checksum.
+The RIFT checkpoint contains trained parameter updates and depends on its matching
+pretrained backbone and VAE. Load it using the project loader.
 
-Metric weights (LPIPS, DISTS, FID, FloLPIPS) are external assets. For FloLPIPS,
-`prepare_flolpips_assets(download=False)` verifies the required pinned local files.
-This code repository alone does not include licensed source video datasets.
+## Configuration
+
+`RAQVC_ARTIFACTS` identifies the parent of the supplied resource bundle.
+Retain the bundle's directory structure and filenames expected by the loader.
+`scripts/final.py preflight` checks required resources and reports missing paths.
+
+Set codec initializer paths in `configs/codec.yaml`. The evaluation manifest
+`configs/evaluation.json` uses paths under `data/` relative to the repository;
+edit these paths or link an external dataset directory. Training index files
+must point to the actual cache shards and source-video manifests.
+
+The connection-head ablation requires its corresponding checkpoint and dedicated
+training/evaluation entry points. See [training](TRAINING.md) and
+[evaluation](TESTING.md) for usage.

@@ -7,7 +7,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-EE4C2C?logo=pytorch&logoColor=white)](requirements-lock.txt)
-[![Endpoint](https://img.shields.io/badge/Release-C512-0F766E)](docs/FRAMEWORK.md)
+[![Endpoint](https://img.shields.io/badge/Model-RIFT-0F766E)](docs/FRAMEWORK.md)
 [![Benchmarks](https://img.shields.io/badge/Benchmarks-42%20videos-8B5CF6)](docs/benchmarks/DATASET_METRICS.csv)
 
 [Overview](#overview) · [Interactive comparisons](#interactive-comparisons) · [Benchmarks](#benchmarks) · [Quick start](#quick-start) · [Documentation](#documentation)
@@ -26,16 +26,14 @@
 
 RIFT combines an entropy-coded latent video representation with a pretrained video flow model. Decoder-visible compression information conditions a **single whole-GOP DiT forward**. Residual strength, direction and gain modules produce a correction to the decoded latent before VAE reconstruction.
 
-This repository publishes the preserved **C512 training/inference endpoint** of the ICLR2027 RIFT project and the retained headless ablation. Later UF-L/Wan and lightweight Lean VAE research branches are separate projects.
+This repository provides the research implementation of RIFT, including latent entropy coding, one-step restoration, training, evaluation and interactive visual comparisons.
 
 - **One-step restoration:** one pretrained Wan DiT call per latent GOP, without random-noise sampling or iterative denoising.
 - **Residual-informed transfer:** codec/QP information, full-band residual strength and direction/gain adaptation.
 - **Actual latent coding:** learned I/P transforms, regional quantization and rANS payload accounting.
-- **Shared endpoint:** training and inference use the same restoration code and active inherited adapters.
+- **Shared restoration pipeline:** training and inference use the same restoration code and conditioning adapters.
 
-![RIFT C512 framework](assets/framework.png)
-
-<p align="center">Original architecture figure · <a href="assets/framework.pdf">PDF</a> · <a href="assets/framework.pptx">Editable PowerPoint</a></p>
+![RIFT framework](assets/framework.png)
 
 The final latent has the form
 
@@ -82,7 +80,7 @@ Click a scene below, then drag the two dividers to compare **Original / GLC / RI
 </tr>
 </table>
 
-The gallery reuses the original archived paper images. Each method uses its own lowest-rate point; GLC rates are entropy estimates and RIFT rates are actual rANS payload rates. [Source, frame and crop metadata](docs/comparisons/PROVENANCE.json).
+The gallery presents four qualitative examples. Each method uses its own lowest-rate point; GLC rates are entropy estimates and RIFT rates are actual rANS payload rates. [Source, frame and crop metadata](docs/comparisons/PROVENANCE.json).
 
 <details>
 <summary><strong>Original paper comparison panel</strong></summary>
@@ -95,9 +93,9 @@ The original sequence-bpp and displayed-frame LPIPS labels are retained. Each me
 
 ## Benchmarks
 
-![1080p perceptual rate-distortion curves](assets/perceptual_rd_1080.png)
+![1080p perceptual rate-distortion curves](assets/rd_perceptual_1080p.png)
 
-**Solid red RIFT curves are preserved local C512 measurements. Dashed baseline curves are digitized published references**, with their original rate/evaluation conventions. They are not a unified local reproduction. [Figure provenance](docs/benchmarks/README.md).
+**Solid red curves show RIFT results. Dashed baseline curves are digitized published references**, with their original rate and evaluation conventions. [Figure provenance](docs/benchmarks/README.md).
 
 These **QP63** rows come from the released [dataset metrics CSV](docs/benchmarks/DATASET_METRICS.csv).
 
@@ -110,19 +108,19 @@ These **QP63** rows come from the released [dataset metrics CSV](docs/benchmarks
 | 720p | UVG | 7 | 0.005369 | 28.8629 | 0.2765 | 0.0867 | 35.2644 | 0.1575 |
 | 720p | MCL-JCV | 30 | 0.005886 | 27.3766 | 0.3048 | 0.1024 | 22.6745 | 0.1709 |
 
-The CSV contains **24 dataset/resolution/QP aggregates** covering **336 video/resolution/QP cases**. These are existing recorded results, not a new GPU evaluation performed for this GitHub publication.
+The CSV contains **24 dataset/resolution/QP aggregates** covering **336 video/resolution/QP cases** across 42 videos.
 
 <details>
-<summary><strong>Preserved C512 evaluation protocol</strong></summary>
+<summary><strong>Evaluation protocol</strong></summary>
 
 - HEVC-B: 5 videos; UVG: 7; MCL-JCV: 30; four QPs and 720p/1080p.
 - Encode and score the first **96 genuine frames** in GOPs **25/25/25/21**; no repeated tail frames.
 - 1080p: reflect-pad to 1920×1088 for coding, crop to 1920×1080 for scoring.
 - 720p: center-crop original sources to 1280×736 for coding, then to 1280×720 for scoring; no resizing.
-- Rate: actual rANS payload bits / (coded frames × coded-canvas pixels); historical container/header bytes are excluded.
+- Rate: actual rANS payload bits / (coded frames × coded-canvas pixels); container/header bytes are excluded.
 - Float-domain spatial metrics, dataset-pooled dual-grid 256-patch  FID, and 95 adjacent-frame FloLPIPS pairs.
 
-This historical RIFT96/GOP25 protocol is distinct from later 97-encoded/96-scored protocols. [Full contract](docs/TESTING.md).
+See the [evaluation specification](docs/TESTING.md) for input geometry, rate accounting and metric aggregation.
 
 </details>
 
@@ -146,61 +144,51 @@ python scripts/final.py --help
 
 `requirements-lock.txt` records the observed research environment, including CUDA-specific packages; adapt PyTorch wheels to your hardware. [Installation guide](docs/INSTALL.md).
 
-### 2. Prepare external assets
+### 2. Prepare model and data resources
 
-**This is a source-code release. Checkpoints, pretrained backbone weights and source videos are external assets. No public C512 checkpoint download is configured in this repository.** [Required assets and hashes](docs/ASSETS.md).
-
-```text
-/path/to/raqvc_artifacts/
-└── C512_FINAL_v1/
-    ├── model/
-    │   ├── C512_original_bundle.pt
-    │   ├── stage3_dit_reproduction.pt
-    │   ├── wan/...
-    │   └── codec_initializers/...
-    └── datasets/
-        ├── 256/index.json
-        └── 512/index.json
-```
+Training and inference require the RIFT checkpoint, pretrained backbone, VAE, codec initializers and dataset indices. **Model weights are not included, and public download links are not yet available.** See [required resources](docs/ASSETS.md).
 
 ```bash
-export RAQVC_ARTIFACTS=/path/to/raqvc_artifacts
-# Rewrite shard/source paths inside dataset indices and configs/evaluation.json.
+export RAQVC_ARTIFACTS=/path/to/resources
+# Keep the supplied model/data bundle layout under this directory.
+# Configure codec weight paths in configs/codec.yaml.
+# The evaluation manifest uses paths relative to the repository.
+ln -s /path/to/video_datasets data
 python scripts/final.py preflight
 ```
 
-The bundle contains the trained codec, adapters, heads and LoRA deltas; Stage3/Wan bases and the VAE are also required. The original bundle is the numerical anchor. A merged BF16 LoRA export is not automatically equivalent.
+The checkpoint contains trained codec, conditioning, restoration and LoRA parameters; its matching backbone and VAE are required.
 
 ### 3. Run
 
 ```bash
-# Real 512/T7 training smoke with checkpoint save/reload.
-python scripts/final.py smoke --devices 0
+# Check the training pipeline and checkpoint save/reload.
+python scripts/final.py smoke --devices 0 --output outputs/smoke
 
-# Joint continuation from C512; --batch is per GPU.
+# Fine-tune RIFT; --batch is per GPU.
 python scripts/final.py train --devices 0,1,2,3,4,5 \
   --steps 512 --batch 1 --evaluate-after \
-  --output "$RAQVC_ARTIFACTS/C512_FINAL_v1/new_runs/joint"
+  --output outputs/joint
 
 # Resume with the same original training configuration.
 python scripts/final.py resume --devices 0,1,2,3,4,5 \
   --steps 512 --batch 1 --evaluate-after \
-  --output "$RAQVC_ARTIFACTS/C512_FINAL_v1/new_runs/joint"
+  --output outputs/joint
 
 # Resumable 42-video evaluation; separate runtime measurements.
-python scripts/final.py evaluate --devices 0 --resolutions 720 1080
-python scripts/final.py speed --devices 0
+python scripts/final.py evaluate --devices 0 --resolutions 720 1080 --output outputs/evaluation
+python scripts/final.py speed --devices 0 --output outputs/speed
 ```
 
-The recorded 512/T7 joint smoke used approximately **74.4 GiB** peak GPU memory. Start with smoke on your hardware. These commands continue from C512 rather than replaying the complete historical schedule. [Training stages, batches and learning rates](docs/TRAINING.md).
+The reference 512-pixel training configuration requires approximately **75 GiB** of GPU memory. Run the smoke check before selecting a batch size. These commands fine-tune an existing checkpoint. See [training configuration](docs/TRAINING.md).
 
-Headless uses `scripts/train_headless.py` and `scripts/evaluate_headless.py`; its checkpoint must not use the standard C512 evaluator.
+The connection-head ablation uses `scripts/train_headless.py` and `scripts/evaluate_headless.py` with its corresponding checkpoint format.
 
 ## Repository layout
 
 ```text
 raqvc/
-  backbone/       Wan, VAE, conditioning and active C512 adapters
+  backbone/       Wan DiT, VAE and decoder-side conditioning
   codec/          I/P transforms, regional quantization and entropy coding
   training/       Shared restoration endpoint, objectives and parameter groups
   data/           Video and 256/512 latent-cache loaders
@@ -224,13 +212,10 @@ third_party/      Vendored DCVC/Wan sources with upstream notices
 | Interactive viewer | [Live comparison gallery](https://qzwamg-web.github.io/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/comparisons/) · [Source](docs/comparisons/README.md) |
 | Benchmark provenance | [docs/benchmarks/README.md](docs/benchmarks/README.md) |
 | Quantization | [docs/CODEC_QUANTIZATION.md](docs/CODEC_QUANTIZATION.md) |
-| Publication snapshot | [docs/PUBLICATION.md](docs/PUBLICATION.md) |
 | Third-party attribution | [third_party/VERSIONS.md](third_party/VERSIONS.md) |
 
-## Release scope and attribution
+## Acknowledgments and licensing
 
-The runtime derives from isolated C512 source-release commit `c5e878731c9b2e6cd96607a9ac00231ed4e75a93`. `RELEASE_MANIFEST.json` records the publication snapshot. Runtime files retain their original hashes; documentation changes do not alter the numerical model.
+RIFT uses components from DCVC and Wan2.2. Their licenses and notices are included in [third_party](third_party/VERSIONS.md). Package licensing information is specified in [pyproject.toml](pyproject.toml).
 
-DCVC/Wan retain original licenses/notices. Existing RIFT package metadata is **proprietary**; this publication does not invent a new license grant.
-
-[Report a setup or reproduction issue](https://github.com/qzwamg-web/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/issues).
+[Report an issue](https://github.com/qzwamg-web/RIFT-RESIDUAL-INFORMED-FLOW-TRANSFER-FOR-ONE-STEP-GENERATIVE-VIDEO-COMPRESSION/issues).

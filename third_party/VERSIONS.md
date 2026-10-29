@@ -1,17 +1,14 @@
-# Vendored runtime sources
+# Third-party components
 
-Only the DCVC and Wan2.2 source trees needed by the C512 runtime are included.
-Their original licenses/notices remain beside the source. File hashes are in
-RELEASE_MANIFEST.json; this is a frozen local snapshot, not a claim that the
-upstream HEAD is identical. Prebuilt extensions, build folders, model weights
-and unrelated baseline implementations are excluded.
+RIFT uses source components from DCVC and Wan2.2. Their licenses and notices
+are included alongside the source.
 
-- DCVC: Microsoft DCVC runtime and rANS C++ extension; see DCVC/LICENSE.txt and
-  DCVC/NOTICE .txt. Build with `python setup.py build_ext --inplace` from
-  DCVC/src/cpp after installing pybind11. Only Python package metadata was aligned
-  to the project's3.10/3.11 environment; C++ source remains unchanged.
-- Wan2.2: pretrained Wan runtime; see Wan2.2/LICENSE.txt. RIFT calls its48-channel
-  TI2V backbone and VAE through raqvc/backbone; pretrained weights stay external.
+- **DCVC** provides entropy models, coding layers and the rANS C++ extension.
+  See [LICENSE.txt](DCVC/LICENSE.txt) and [NOTICE](<DCVC/NOTICE .txt>).
+  Build the extension from `DCVC/src/cpp` with
+  `python setup.py build_ext --inplace` after installing pybind11.
+- **Wan2.2** provides the video DiT and VAE runtime.
+  See [LICENSE.txt](Wan2.2/LICENSE.txt). Pretrained weights are external resources.
 
-Do not replace either snapshot or a pretrained base when reproducing the C512
-numerical endpoint without revalidating checkpoint loading and output parity.
+Use pretrained weights compatible with the model loader. Changes to third-party
+implementations require validating checkpoint loading and numerical behavior.

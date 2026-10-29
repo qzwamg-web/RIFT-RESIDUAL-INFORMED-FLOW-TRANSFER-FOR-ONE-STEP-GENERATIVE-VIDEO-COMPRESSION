@@ -1,4 +1,4 @@
-"""Rank-8 self-attention LoRA for C512 fine-tuning."""
+"""Rank-8 self-attention LoRA for RIFT fine-tuning."""
 
 import math
 import torch

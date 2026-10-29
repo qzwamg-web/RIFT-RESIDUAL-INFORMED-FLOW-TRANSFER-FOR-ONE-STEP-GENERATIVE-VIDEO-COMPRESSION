@@ -1,4 +1,4 @@
-"""Inherited C512 error, scale correction, direction and token gain heads."""
+"""Inherited RIFT error, scale correction, direction and token gain heads."""
 
 from __future__ import annotations
 import torch

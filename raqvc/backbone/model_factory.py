@@ -1,4 +1,4 @@
-"""Build the fixed C512 backbone."""
+"""Build the fixed RIFT backbone."""
 
 from raqvc.backbone.dit import RAQFlowDiT
 from raqvc.backbone.c512_dit import Task438WindowedDiT

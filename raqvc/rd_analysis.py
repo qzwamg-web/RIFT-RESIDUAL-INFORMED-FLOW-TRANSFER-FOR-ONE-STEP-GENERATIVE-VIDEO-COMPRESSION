@@ -1,4 +1,4 @@
-"""Stored C512 anchor lookup and monotone PCHIP BD-rate."""
+"""Stored RIFT anchor lookup and monotone PCHIP BD-rate."""
 
 import json
 from pathlib import Path

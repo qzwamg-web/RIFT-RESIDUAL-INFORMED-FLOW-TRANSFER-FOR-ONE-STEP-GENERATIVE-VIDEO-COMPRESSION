@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "raqvc"
 version = "0.1.0"
-description = "Rate-Adaptive Quantization Video Coding — reference implementation"
+description = "Residual-Informed Flow Transfer for One-Step Generative Video Compression"
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
 authors = [{name = "jyfu0809", email = "jyfu0809@gmail.com"}]

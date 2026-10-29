@@ -1,4 +1,4 @@
-"""The codec architecture selected by C512. Historical alternatives are rejected."""
+"""The codec architecture selected by RIFT. Historical alternatives are rejected."""
 
 import json
 import os
